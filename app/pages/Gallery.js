@@ -6,7 +6,6 @@ import Menu from '../components/Menu';
 import Story from './Story';
 import { navigationRef } from '../navigation/navigationService';
 
-
 const Gallery = ({ navigation }) =>{
 
 		const items = [

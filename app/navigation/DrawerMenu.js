@@ -7,6 +7,40 @@ import {
 
 import { ROUTES } from '../config/constants'
 import NavigationService from './navigationService'
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+
+//exporting to use in APP js and then into Video.js
+//export this to rootNavigation
+//HOME
+export const HomeButtonMenu = (props) => (
+  <DrawerContentScrollView {...props}>
+    <DrawerItem
+      label="Home"
+      onPress={() => NavigationService.navigate(ROUTES.HOME)}
+    />
+  </DrawerContentScrollView>
+)
+
+//STORY
+export const StoryButtonMenu = (props) => (
+  <DrawerContentScrollView {...props}>
+    <DrawerItem
+      label="Story"
+      onPress={() => NavigationService.navigate(ROUTES.STORY)}
+    />
+  </DrawerContentScrollView>
+)
+
+//SHOP
+export const ShopButtonMenu = (props) => (
+  <DrawerContentScrollView {...props}>
+    <DrawerItem
+      label="Shop"
+      onPress={() => NavigationService.navigate(ROUTES.SHOP)}
+    />
+  </DrawerContentScrollView>
+)
 
 const DrawerMenu = (props)=> (
     <DrawerContentScrollView {...props}>
@@ -15,8 +49,8 @@ const DrawerMenu = (props)=> (
         onPress={() => props.navigation.dispatch(DrawerActions.closeDrawer())}
       />
       <DrawerItem
-        label="Home"
-        onPress={() => NavigationService.navigate(ROUTES.HOME)}
+      label="Home"
+      onPress={() => NavigationService.navigate(ROUTES.HOME)}
       />
       <DrawerItem
         label="Story"

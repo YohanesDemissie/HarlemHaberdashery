@@ -1,12 +1,51 @@
 import React from 'react';
 import Video from 'react-native-video';
-import { StyleSheet } from 'react-native';
-import { View, Text, Button, TouchableHighlight } from 'react-native';
-import Menu from './app/components/Menu';
-import Home from './app/pages/Home';
-import Story from './app/pages/Story';
-import Shop from './app/pages/Shop'
+import { View, Text, Button, TouchableOpacity, StyleSheet } from 'react-native';
 
+import {ROUTES} from './app/config/constants';
+import * as RootNavigation from './app/navigation/rootNavigation.js';
+import { navigationRef, navigate, NavigationService } from './app/navigation/navigationService.js';
+import { useNavigation, NavigationContainer } from '@react-navigation/native';
+import {
+  DrawerContentScrollView,
+  DrawerItem,
+} from '@react-navigation/drawer';
+// import DrawerMenu from './app/navigation/DrawerMenu'
+import {HomeButtonNavigation, StoryButtonNavigation, ShopButtonNavigation} from './app/navigation/rootNavigation'
+
+// import React from 'react';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+// import {ROUTES} from '../config/constants';
+// import DrawerMenu, {HomeButton} from './app/navigation/DrawerMenu';
+// import Home from './app/pages/Home';
+import Story from './app/pages/Story';
+// import  HomeButtonApp  from './App';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+const HomeButtonApp = () => {
+  return(
+    <NavigationContainer ref={navigationRef}>
+      <HomeButtonNavigation  />
+     </NavigationContainer>
+  )
+}
+
+export const StoryButtonApp = () => {
+  return(
+    <NavigationContainer ref={navigationRef}>
+      <StoryButtonNavigation  />
+     </NavigationContainer>
+  )
+}
+
+export const ShopButtonApp = ({ navigation}) => {
+  return (
+    <NavigationContainer ref={navigationRef}>
+      <ShopButtonNavigation  />
+     </NavigationContainer>
+  )
+}
 
 let seconds = 0;
 //ADD CONSOLE.LOG('ADDING BY 1') TO END OF 'SECONDS += 1' TO READ ACCUMILATING DATA IN CONSOLE
@@ -35,32 +74,26 @@ let timer = setInterval(() => {
 
 // BELOW THE SECONDS VARIABLE HOLDS THE VALUE OF TIME!!!!!!!!!!!!!!!!!!!!!!!
 function handleClick() {
+  let conditionalComponent;
      if(seconds <= 5){
-      console.log(seconds, 'BELOW 5');
-    return (<Home />)
+       console.log(seconds, 'BELOW 5');
+      conditionalComponent = <HomeButtonApp />
   }
   if(seconds > 5 && seconds <= 10){
         console.log(seconds, '5 - 10')
-      return <Story />
+      conditionalComponent = <StoryButtonApp />
   }
   if(seconds > 10 && seconds < 15){
     console.log(seconds, '10 - 15')
-    return <Shop />
+    conditionalComponent = <ShopButtonApp />
   }
+  return conditionalComponent;
 }
 
-const VideoPage = ({ navigation }) => {
+const VideoPage = () => {
   return(
-    <View style={{flex:1, flexDirection: 'column', justifyContent: 'center', padding: 20, marginTop: 50}} >
-      <Menu navigation={navigation} style={{textAlign: 'center'}}/>
-
-      <Button
-      style={{marginTop: 50}}
-        title="Press me"
-        onPress={() => handleClick()}
-      />
-      <Video source={{uri: "https://www.w3schools.com/html/mov_bbb.mp4"}}
-      style={{flex: 1}} />
+    <View style={{display: 'flex', flex: 1, flexDirection: 'column', marginTop: 100}}>
+      <Button title="Test" onPress={() =>  <HomeButtonApp/>} />
     </View>
   )
 }
