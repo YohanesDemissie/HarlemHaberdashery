@@ -1,28 +1,11 @@
 import React from 'react';
 import Video from 'react-native-video';
 import { View, Text, Button, TouchableOpacity, StyleSheet } from 'react-native';
-
-import {ROUTES} from './app/config/constants';
-import * as RootNavigation from './app/navigation/rootNavigation.js';
-import { navigationRef, navigate, NavigationService } from './app/navigation/navigationService.js';
-import { useNavigation, NavigationContainer } from '@react-navigation/native';
-import {
-  DrawerContentScrollView,
-  DrawerItem,
-} from '@react-navigation/drawer';
-// import DrawerMenu from './app/navigation/DrawerMenu'
+import { navigationRef } from './app/navigation/navigationService.js';
+import { NavigationContainer } from '@react-navigation/native';
 import {HomeButtonNavigation, StoryButtonNavigation, ShopButtonNavigation} from './app/navigation/rootNavigation'
 
-// import React from 'react';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-
-// import {ROUTES} from '../config/constants';
-// import DrawerMenu, {HomeButton} from './app/navigation/DrawerMenu';
-// import Home from './app/pages/Home';
-import Story from './app/pages/Story';
-// import  HomeButtonApp  from './App';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-
+// I'M trying to these next 3 const's to be an 'onPress' button
 const HomeButtonApp = () => {
   return(
     <NavigationContainer ref={navigationRef}>
@@ -47,6 +30,7 @@ export const ShopButtonApp = ({ navigation}) => {
   )
 }
 
+//IGNORE THIS
 let seconds = 0;
 //ADD CONSOLE.LOG('ADDING BY 1') TO END OF 'SECONDS += 1' TO READ ACCUMILATING DATA IN CONSOLE
 let timer = setInterval(() => {
@@ -73,22 +57,22 @@ let timer = setInterval(() => {
 );
 
 // BELOW THE SECONDS VARIABLE HOLDS THE VALUE OF TIME!!!!!!!!!!!!!!!!!!!!!!!
-function handleClick() {
-  let conditionalComponent;
-     if(seconds <= 5){
-       console.log(seconds, 'BELOW 5');
-      conditionalComponent = <HomeButtonApp />
-  }
-  if(seconds > 5 && seconds <= 10){
-        console.log(seconds, '5 - 10')
-      conditionalComponent = <StoryButtonApp />
-  }
-  if(seconds > 10 && seconds < 15){
-    console.log(seconds, '10 - 15')
-    conditionalComponent = <ShopButtonApp />
-  }
-  return conditionalComponent;
-}
+// function handleClick() {
+//   let conditionalComponent;
+//      if(seconds <= 5){
+//        console.log(seconds, 'BELOW 5');
+//       conditionalComponent = <HomeButtonApp />
+//   }
+//   if(seconds > 5 && seconds <= 10){
+//         console.log(seconds, '5 - 10')
+//       conditionalComponent = <StoryButtonApp />
+//   }
+//   if(seconds > 10 && seconds < 15){
+//     console.log(seconds, '10 - 15')
+//     conditionalComponent = <ShopButtonApp />
+//   }
+//   return conditionalComponent;
+// }
 
 const VideoPage = () => {
   return(
