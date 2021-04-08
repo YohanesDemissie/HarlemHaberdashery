@@ -2,8 +2,17 @@ import React from 'react';
 import Video from 'react-native-video';
 import { View, Text, Button, TouchableOpacity, StyleSheet } from 'react-native';
 import { navigationRef } from './app/navigation/navigationService.js';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { DrawerActions } from '@react-navigation/native';
+
 import {HomeButtonNavigation, StoryButtonNavigation, ShopButtonNavigation} from './app/navigation/rootNavigation'
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import NavigationService from './app/navigation/navigationService'
+import Home from './app/pages/Home'
+
+import { createStackNavigator } from '@react-navigation/stack';
+
+import {ROUTES} from './app/config/constants';
 
 // I'M trying to these next 3 const's to be an 'onPress' button
 const HomeButtonApp = () => {
@@ -56,6 +65,19 @@ let timer = setInterval(() => {
   1000
 );
 
+function GoToButton({ screenName }) {
+  const navigation = useNavigation();
+
+  return (
+    <Button
+      title={`Go to ${screenName}`}
+      onPress={() => navigation.navigate(screenName)}
+    />
+  );
+}
+
+
+
 // BELOW THE SECONDS VARIABLE HOLDS THE VALUE OF TIME!!!!!!!!!!!!!!!!!!!!!!!
 // function handleClick() {
 //   let conditionalComponent;
@@ -74,12 +96,28 @@ let timer = setInterval(() => {
 //   return conditionalComponent;
 // }
 
-const VideoPage = () => {
+const VideoPage = ({navigation, Home}) => {
   return(
+    <NavigationContainer ref={navigationRef}>
+
     <View style={{display: 'flex', flex: 1, flexDirection: 'column', marginTop: 100}}>
-      <Button title="Test" onPress={() =>  <HomeButtonApp/>} />
+      <GoToButton screenName="Home" />
     </View>
+    </NavigationContainer>
   )
+}
+
+const Stack = createStackNavigator();
+
+function Navigate() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
 // Later on in your styles..

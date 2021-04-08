@@ -35,8 +35,8 @@ export const ShopButtonNavigation = () => (
     </Drawer.Navigator>
   )
 
-const  RootNavigation = () =>(
-    <Drawer.Navigator  drawerContent={props => <DrawerMenu {...props} />}>
+const RootNavigation = () =>(
+    <Drawer.Navigator drawerContent={props => <DrawerMenu {...props} />}>
       <Drawer.Screen name={ROUTES.HOME} component={Home} />
       <Drawer.Screen name={ROUTES.STORY} component={Story} />
       <Drawer.Screen name={ROUTES.SHOP} component={Shop} />
