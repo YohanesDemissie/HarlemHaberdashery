@@ -1,18 +1,15 @@
 import React from 'react';
 import { Button, View, Text, StyleSheet, Image, Linking, TouchableOpacity, ScrollView} from 'react-native';
 
+import { ROUTES } from '../config/constants';
 import Menu from '../components/Menu';
 import Footer from './Footer';
-import GoToButton from '../../App';
-import { navigationRef } from '../navigation/navigationService';
-import { ROUTES } from '../config/constants';
 
 const Shop = ({navigation}) =>{
   return(
     <ScrollView>
-
       <Menu navigation={navigation}  />
-      <Button title="Home" onPress={() => navigation.navigate('HOME')}/>
+      <Button title="Home" onPress={() => navigation.navigate(ROUTES.HOME)}/>
       <View style={styles.shopStyles}>
         <Text style={{fontSize: 40, marginTop: 20}}>Shop</Text>
         <View style={styles.breakLine} />

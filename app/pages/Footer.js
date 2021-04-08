@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, View, Image } from 'react-native';
 import harlemHaberdasheryLogo from '../../assets/harlemHaberdasheryLogo.png';
 
-
 const Footer = () => {
   return(
     <View>
