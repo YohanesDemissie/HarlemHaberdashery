@@ -5,6 +5,8 @@ import assets from '../../assets/';
 import Menu from '../components/Menu';
 import { navigationRef } from '../navigation/navigationService';
 import { HomeButtonNavigation } from '../navigation/rootNavigation';
+import {ROUTES} from '../config/constants'
+import GoToButton from '../../App';
 import Gallery from './Gallery';
 
 const Home = ({ navigation }) =>{
@@ -12,6 +14,7 @@ const Home = ({ navigation }) =>{
     <React.Fragment>
       {/* <HomeButtonNavigation /> */}
       <Menu navigation={navigation} />
+      {/* <GoToButton name={"HOME"} /> */}
       <Gallery />
     </React.Fragment>
   );

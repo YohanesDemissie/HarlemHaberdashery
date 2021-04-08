@@ -1,12 +1,17 @@
 import React from 'react';
-//adding/testing routes
-import { ROUTES } from '../config/constants'
-import NavigationService from '../navigation/navigationService';
-// end testing
 import { View, Button } from 'react-native';
 import { DrawerActions } from '@react-navigation/native';
 
-
+export default ({ navigation }) => {
+  return(
+        <View style={{flexDirection: 'row', marginTop: '10%'}}>
+      <Button
+         title="Menu"
+        onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+      />
+    </View>
+  )
+}
 //KEY COMPONENT TO NAVIGATION BUTTONS
 // const HomeMenuNavigationButton = () => {
 //   return(
@@ -35,14 +40,14 @@ import { DrawerActions } from '@react-navigation/native';
 //       )
 // }
 
-export default ({ navigation }) => {
-  return(
-        <View style={{flexDirection: 'row', marginTop: '10%'}}>
-      <Button
-        title="Menu"
-        onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
-      />
-      {/* <HomeMenuNavigationButton /> */}
-    </View>
-  )
-}
+// export default ({ navigation }) => {
+//   return(
+//         <View style={{flexDirection: 'row', marginTop: '10%'}}>
+//       <Button
+//         title="Menu"
+//         onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+//       />
+//       {/* <HomeMenuNavigationButton /> */}
+//     </View>
+//   )
+// }
