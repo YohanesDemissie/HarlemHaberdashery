@@ -19,6 +19,10 @@ const DrawerMenu = (props)=> (
       onPress={() => NavigationService.navigate(ROUTES.HOME)}
       />
       <DrawerItem
+      label="Video Page"
+      onPress={() => NavigationService.navigate(ROUTES.VIDEOPAGE)}
+      />
+      <DrawerItem
         label="Story"
         onPress={() => NavigationService.navigate(ROUTES.STORY)}
       />
