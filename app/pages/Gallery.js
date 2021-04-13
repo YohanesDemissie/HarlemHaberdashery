@@ -1,11 +1,12 @@
 import React from 'react';
 import TimedSlideshow from 'react-native-timed-slideshow';
 
+// ORIGINAL FIRST URI SOURCE: https://images.squarespace-cdn.com/content/v1/5a79c4d46957dae99fcee4e1/1593193844207-9P83PTZ10RN0J7NIGO5H/ke17ZwdGBToddI8pDm48kJqUEiNNT7_Oy5_eDfxLoet7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmbA40xHUQunj0vJznaJavlxCln8iZJmtpEhXpCYo9xn3pkpRdm6KY38hqeQMzzQAa/Photo+Jun+24%2C+6+14+44+PM.jpg?format=2500w
 const Gallery = () =>{
 
 	const items = [
 		{
-			uri: "https://images.squarespace-cdn.com/content/v1/5a79c4d46957dae99fcee4e1/1593193844207-9P83PTZ10RN0J7NIGO5H/ke17ZwdGBToddI8pDm48kJqUEiNNT7_Oy5_eDfxLoet7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmbA40xHUQunj0vJznaJavlxCln8iZJmtpEhXpCYo9xn3pkpRdm6KY38hqeQMzzQAa/Photo+Jun+24%2C+6+14+44+PM.jpg?format=2500w",
+			uri: 'https://images.squarespace-cdn.com/content/v1/5a79c4d46957dae99fcee4e1/1593193844207-9P83PTZ10RN0J7NIGO5H/ke17ZwdGBToddI8pDm48kJqUEiNNT7_Oy5_eDfxLoet7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmbA40xHUQunj0vJznaJavlxCln8iZJmtpEhXpCYo9xn3pkpRdm6KY38hqeQMzzQAa/Photo+Jun+24%2C+6+14+44+PM.jpg?format=2500w',
 			url: "google.com",
 			title: "HH Embroidery Patch",
 			text: "Minnesota, USA",
