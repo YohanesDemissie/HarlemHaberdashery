@@ -56,28 +56,6 @@ function handleClick(page) {
   return page;
 }
 
-// const VideoCarousel = () => {
-//   const [index, setIndex] = useState(0);
-
-//    useEffect(() => {
-//      const toggle = setInterval(() => {
-//        setIndex( index + 1)
-//      }, 10000);
-//      //MAKE VIDEO ARRAY LOOP BACK TO BEGINNING
-//      if(index > 2){
-//        setIndex(0)
-//      }
-//      return () => clearInterval(toggle);
-//   })
-
-//   return <Video source={videoData[index]}  style={{
-//         position: 'absolute',
-//         top: 150,
-//         left: 0,
-//         bottom: 0,
-//         right: 0,}}/>;
-// }
-
 const VideoPage = ({navigation}) => {
   const [index, setIndex] = useState(0);
 
@@ -97,19 +75,19 @@ const VideoPage = ({navigation}) => {
       <TouchableOpacity style={{display: 'flex', flex: 1}} onPress={() => {
         if(seconds <= 5){
           // console.log(seconds, 'BELOW 5');
-                    Linking.openURL('https://hhbespoke.squarespace.com/all/bandana-set')
-
+          Linking.openURL('https://hhbespoke.squarespace.com/all/bandana-set')
         }
         if(seconds > 5 && seconds <= 10){
           // console.log(seconds, '5 - 10')
-          navigation.navigate(ROUTES.SHOP)
+          Linking.openURL('https://hhbespoke.squarespace.com/all/bandana-set')
         }
         if(seconds > 10 && seconds < 15){
           // console.log(seconds, '10 - 15')
-          navigation.navigate(ROUTES.STORY)}
+          Linking.openURL('https://hhbespoke.squarespace.com/all/bandana-set')
+        }
       }}>
 
-      <Video 
+      <Video
         fullscreen={true}
         resizeMode="cover"
         key={index}
@@ -124,7 +102,7 @@ const VideoPage = ({navigation}) => {
         }}/>
 
       </TouchableOpacity>
-      <Button title="Test" onPress={() => {
+      {/* <Button title="Test" onPress={() => {
         if(seconds <= 5){
           console.log(seconds, 'BELOW 5');
           Linking.openURL('https://hhbespoke.squarespace.com/all/bandana-set')
@@ -141,7 +119,7 @@ const VideoPage = ({navigation}) => {
           // navigation.navigate(ROUTES.STORY)
         }
         }}
-      />
+      /> */}
     </View>
   )
 }
