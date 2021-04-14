@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Video from 'react-native-video';
-import { View, Text, Button, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, Button, TouchableOpacity, StyleSheet, Linking } from 'react-native';
 import Menu from '../components/Menu';
 import HHJacketPt1 from '../../assets/videos/HHJacketPt1.mp4';
 import HHWaterPt2 from '../../assets/videos/HHWaterPt2.mp4';
@@ -97,7 +97,8 @@ const VideoPage = ({navigation}) => {
       <TouchableOpacity style={{display: 'flex', flex: 1}} onPress={() => {
         if(seconds <= 5){
           // console.log(seconds, 'BELOW 5');
-          navigation.navigate(ROUTES.HOME)
+                    Linking.openURL('https://hhbespoke.squarespace.com/all/bandana-set')
+
         }
         if(seconds > 5 && seconds <= 10){
           // console.log(seconds, '5 - 10')
@@ -123,20 +124,24 @@ const VideoPage = ({navigation}) => {
         }}/>
 
       </TouchableOpacity>
-      {/* <Button title="Test" onPress={() => {
+      <Button title="Test" onPress={() => {
         if(seconds <= 5){
           console.log(seconds, 'BELOW 5');
-          navigation.navigate(ROUTES.HOME)
+          Linking.openURL('https://hhbespoke.squarespace.com/all/bandana-set')
+          // navigation.navigate(ROUTES.HOME)
         }
         if(seconds > 5 && seconds <= 10){
           console.log(seconds, '5 - 10')
-          navigation.navigate(ROUTES.SHOP)
+          Linking.openURL('https://hhbespoke.squarespace.com/all/bandana-set')
+          // navigation.navigate(ROUTES.SHOP)
         }
         if(seconds > 10 && seconds < 15){
           console.log(seconds, '10 - 15')
-          navigation.navigate(ROUTES.STORY)}
+          Linking.openURL('https://hhbespoke.squarespace.com/all/bandana-set')
+          // navigation.navigate(ROUTES.STORY)
+        }
         }}
-      /> */}
+      />
     </View>
   )
 }
