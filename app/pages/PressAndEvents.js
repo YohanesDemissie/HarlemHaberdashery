@@ -7,7 +7,7 @@ import Menu from '../components/Menu';
 
 const PressAndEvents = ({navigation}) =>{
   return(
-    <View>
+    <View style={{width: '90%', display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'center'}}>
       <Menu navigation={navigation} />
       <View style={{
       display: 'flex',
@@ -18,6 +18,24 @@ const PressAndEvents = ({navigation}) =>{
   	// height: 100vw;
     }}>
       <Image source={harlemHaberdasheryLogo}
+      style={{isplay: 'flex',
+    justifyContent: 'center',
+    // resizeMode: 'cover',
+    marginBottom: 100,
+    width: '30%',
+    // height: 350
+  }}
+      />
+       <Image source={harlemHaberdasheryLogo}
+      style={{isplay: 'flex',
+    justifyContent: 'center',
+    // resizeMode: 'cover',
+    marginBottom: 100,
+    width: '30%',
+    // height: 350
+  }}
+      />
+       <Image source={harlemHaberdasheryLogo}
       style={{isplay: 'flex',
     justifyContent: 'center',
     // resizeMode: 'cover',

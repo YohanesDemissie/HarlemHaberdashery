@@ -17,10 +17,10 @@ let timer = setInterval(() => {
   if(seconds < 10){
     console.log(seconds, '0 - 10');
   }
-  if(seconds > 10 && seconds < 20){
+  if(seconds >= 10 && seconds < 20){
         console.log(seconds, '10 - 20')
   }
-  if(seconds > 20 && seconds < 30){
+  if(seconds >= 20 && seconds < 30){
     console.log(seconds, '20 - 30')
   }
   if(seconds == 30){
@@ -77,19 +77,19 @@ const VideoPage = ({navigation}) => {
           console.log(seconds, 'BELOW 10');
           Linking.openURL('https://hhbespoke.squarespace.com/all/harlemwhitesilverfoil-4g9kk-tp5m4-epkst-d3b55')
         } else
-        if(seconds > 10 && seconds < 20){
+        if(seconds >= 10 && seconds < 20){
           console.log(seconds, '10 - 20')
-          Linking.openURL('https://www.reservebar.com/products/hh-bespoke-gin')
+          Linking.openURL('https://www.reservebar.com/products/hh-bespoke-vodka')
         } else
-        if(seconds > 20 && seconds < 30){
+        if(seconds >= 20 && seconds < 30){
           console.log(seconds, '20 - 30')
           Linking.openURL('https://www.reservebar.com/collections/hh-bespoke-spirits')
         }
       }}>
 
       <Video
-        // fullscreen={true}
-        // resizeMode="cover"
+        fullscreen={true}
+        resizeMode="cover"
         key={index}
         source={videoData[index]}
         style={{
