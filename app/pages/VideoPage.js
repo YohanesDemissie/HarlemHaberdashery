@@ -41,15 +41,15 @@ const videoData = [
 // BELOW THE SECONDS VARIABLE HOLDS THE VALUE OF TIME!!!!!!!!!!!!!!!!!!!!!!!
 let page;
 function handleClick(page) {
-     if(seconds <= 5){
+     if(seconds <= 10){
       //  console.log(seconds, 'BELOW 5');
       page = ROUTES.HOME
   }
-  if(seconds > 5 && seconds <= 10){
+  if(seconds > 10 && seconds < 20){
         // console.log(seconds, '5 - 10')
       page = ROUTES.SHOP
   }
-  if(seconds > 10 && seconds < 15){
+  if(seconds > 20 && seconds < 30){
     // console.log(seconds, '10 - 15')
     page = ROUTES.STORY
   }
@@ -71,30 +71,30 @@ const VideoPage = ({navigation}) => {
   })
   return(
     <View style={{display: 'flex', flex: 1, flexDirection: 'column'}}>
-      <Menu navigation={navigation} />
+      {/* <Menu navigation={navigation} /> */}
       <TouchableOpacity style={{display: 'flex', flex: 1}} onPress={() => {
-        if(seconds <= 5){
-          // console.log(seconds, 'BELOW 5');
-          Linking.openURL('https://hhbespoke.squarespace.com/all/bandana-set')
-        }
-        if(seconds > 5 && seconds <= 10){
-          // console.log(seconds, '5 - 10')
-          Linking.openURL('https://hhbespoke.squarespace.com/all/bandana-set')
-        }
-        if(seconds > 10 && seconds < 15){
-          // console.log(seconds, '10 - 15')
-          Linking.openURL('https://hhbespoke.squarespace.com/all/bandana-set')
+        // let seconds = 0;
+        if(seconds < 10){
+          console.log(seconds, 'BELOW 10');
+          Linking.openURL('https://hhbespoke.squarespace.com/all/harlemwhitesilverfoil-4g9kk-tp5m4-epkst-d3b55')
+        } else
+        if(seconds > 10 && seconds < 20){
+          console.log(seconds, '10 - 20')
+          Linking.openURL('https://www.reservebar.com/products/hh-bespoke-gin')
+        } else
+        if(seconds > 20 && seconds < 30){
+          console.log(seconds, '20 - 30')
+          Linking.openURL('https://www.reservebar.com/collections/hh-bespoke-spirits')
         }
       }}>
 
       <Video
-        fullscreen={true}
-        resizeMode="cover"
+        // fullscreen={true}
+        // resizeMode="cover"
         key={index}
         source={videoData[index]}
         style={{
           position: 'absolute',
-          viewHeight: '400%',
           top: 0,
           left: 0,
           bottom: 0,
@@ -102,24 +102,24 @@ const VideoPage = ({navigation}) => {
         }}/>
 
       </TouchableOpacity>
-      {/* <Button title="Test" onPress={() => {
+      <Button title="Test" onPress={() => {
         if(seconds <= 5){
           console.log(seconds, 'BELOW 5');
           Linking.openURL('https://hhbespoke.squarespace.com/all/bandana-set')
-          // navigation.navigate(ROUTES.HOME)
+          navigation.navigate(ROUTES.HOME)
         }
         if(seconds > 5 && seconds <= 10){
           console.log(seconds, '5 - 10')
           Linking.openURL('https://hhbespoke.squarespace.com/all/bandana-set')
-          // navigation.navigate(ROUTES.SHOP)
+          navigation.navigate(ROUTES.SHOP)
         }
         if(seconds > 10 && seconds < 15){
           console.log(seconds, '10 - 15')
           Linking.openURL('https://hhbespoke.squarespace.com/all/bandana-set')
-          // navigation.navigate(ROUTES.STORY)
+          navigation.navigate(ROUTES.STORY)
         }
         }}
-      /> */}
+      />
     </View>
   )
 }
