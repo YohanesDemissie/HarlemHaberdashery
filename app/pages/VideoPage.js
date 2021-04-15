@@ -14,29 +14,22 @@ let seconds = 0;
 //ADD CONSOLE.LOG('ADDING BY 1') TO END OF 'SECONDS += 1' TO READ ACCUMILATING DATA IN CONSOLE
 let timer = setInterval(() => {
   seconds += 1;
-  if(seconds <= 5){
-    console.log(seconds, '0 - 5');
+  if(seconds < 10){
+    console.log(seconds, '0 - 10');
   }
-  if(seconds > 5 && seconds <= 10){
-        console.log(seconds, '5 - 10')
+  if(seconds > 10 && seconds < 20){
+        console.log(seconds, '10 - 20')
   }
-  if(seconds > 10 && seconds < 15){
-    console.log(seconds, '10 - 15')
+  if(seconds > 20 && seconds < 30){
+    console.log(seconds, '20 - 30')
   }
-  if(seconds >= 15){
+  if(seconds == 30){
     seconds = 0;
     seconds += 1;
   }
 },
   1000
 );
-
-//create array of videos
-const videoData = [
-  HHJacketPt1,
-  HHWaterPt2,
-  HHSpiritsPt3,
-];
 
 // BELOW THE SECONDS VARIABLE HOLDS THE VALUE OF TIME!!!!!!!!!!!!!!!!!!!!!!!
 let page;
@@ -56,6 +49,13 @@ function handleClick(page) {
   return page;
 }
 
+//create array of videos
+const videoData = [
+  HHJacketPt1,
+  HHWaterPt2,
+  HHSpiritsPt3,
+];
+
 const VideoPage = ({navigation}) => {
   const [index, setIndex] = useState(0);
 
@@ -73,7 +73,6 @@ const VideoPage = ({navigation}) => {
     <View style={{display: 'flex', flex: 1, flexDirection: 'column'}}>
       {/* <Menu navigation={navigation} /> */}
       <TouchableOpacity style={{display: 'flex', flex: 1}} onPress={() => {
-        // let seconds = 0;
         if(seconds < 10){
           console.log(seconds, 'BELOW 10');
           Linking.openURL('https://hhbespoke.squarespace.com/all/harlemwhitesilverfoil-4g9kk-tp5m4-epkst-d3b55')
@@ -103,18 +102,18 @@ const VideoPage = ({navigation}) => {
 
       </TouchableOpacity>
       <Button title="Test" onPress={() => {
-        if(seconds <= 5){
-          console.log(seconds, 'BELOW 5');
+        if(seconds < 10){
+          console.log(seconds, 'BELOW 10');
           Linking.openURL('https://hhbespoke.squarespace.com/all/bandana-set')
           navigation.navigate(ROUTES.HOME)
         }
-        if(seconds > 5 && seconds <= 10){
-          console.log(seconds, '5 - 10')
+        if(seconds > 10 && seconds < 20){
+          console.log(seconds, '10 - 20')
           Linking.openURL('https://hhbespoke.squarespace.com/all/bandana-set')
           navigation.navigate(ROUTES.SHOP)
         }
-        if(seconds > 10 && seconds < 15){
-          console.log(seconds, '10 - 15')
+        if(seconds > 20 && seconds < 30){
+          console.log(seconds, '20 - 30')
           Linking.openURL('https://hhbespoke.squarespace.com/all/bandana-set')
           navigation.navigate(ROUTES.STORY)
         }
