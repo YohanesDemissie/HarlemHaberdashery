@@ -75,7 +75,7 @@ const VideoPage = ({navigation}) => {
       <TouchableOpacity style={{display: 'flex', flex: 1}} onPress={() => {
         if(seconds < 10){
           console.log(seconds, 'BELOW 10');
-          Linking.openURL('https://hhbespoke.squarespace.com/all/harlemwhitesilverfoil-4g9kk-tp5m4-epkst-d3b55')
+          Linking.openURL('https://www.harlemhaberdashery.com/')
         } else
         if(seconds >= 10 && seconds < 20){
           console.log(seconds, '10 - 20')
