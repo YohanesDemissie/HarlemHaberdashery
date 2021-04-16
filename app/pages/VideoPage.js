@@ -88,8 +88,9 @@ const VideoPage = ({navigation}) => {
       }}>
 
       <Video
-        fullscreen={true}
-        resizeMode="cover"
+        // fullscreen={true}
+        // resizeMode="cover"
+        muted={true}
         key={index}
         source={videoData[index]}
         style={{
