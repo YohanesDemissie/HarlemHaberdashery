@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Component } from 'react';
 import Video from 'react-native-video';
 import { View, Text, Button, TouchableOpacity, StyleSheet, Linking } from 'react-native';
 import Menu from '../components/Menu';
@@ -6,48 +6,51 @@ import HHJacketPt1 from '../../assets/videos/HHJacketPt1.mp4';
 import HHWaterPt2 from '../../assets/videos/HHWaterPt2.mp4';
 import HHSpiritsPt3 from '../../assets/videos/HHSpiritsPt3.mp4';
 
-import {ROUTES} from '../config/constants';
-//create array of videos
-const videoData = [
-  HHJacketPt1,
-  HHWaterPt2,
-  HHSpiritsPt3,
-];
+class VideoTest extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        index: 0,
+        seconds: 0
+    };
+    this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
+}
 
-let seconds = 0;
-let index = 0;
+forceUpdateHandler(){
+    this.forceUpdate();
+  };
 
-const VideoPage = ({navigation}) => {
+
   // const [index, setIndex] = useState(0);
   // const [seconds, setSeconds] = useState(0);
 
-const timer = setInterval(() => {
-  seconds += 1;
-  if(index > 2){
-    index = 0;
-    console.log(seconds, 'seconds')
+timer = setInterval(() => {
+  this.setState({seconds: this.state.seconds += 1});
+  if(this.state.index === 3){
+    this.setState({index: 0});
+    this.setState({ seconds: 0});
+    console.log(this.state.seconds, 'this.state.seconds')
   }
-  if(seconds >= 10){
-    // setIndex(index += 1);
+  if(this.state.seconds >= 10){
+    // setIndex(this.state.index += 1);
     // setSeconds(0);
-    seconds = 0;
-    index = index + 1;
+    this.setState({index: this.state.index += 1})
+    this.setState({seconds: 0});
+    // this.state.index = this.state.index + 1;
   }
-  console.log(seconds, index);
-  // const [index, setIndex] = useState(0);
-  console.log(index, 'INDEX STATE')
+  console.log(this.state.seconds, this.state.index);
+  // const [this.state.index, setIndex] = useState(0);
+  console.log(this.state.index, 'INDEX STATE')
 },
   1000
 );
 
-// let videoTimer = setInterval(() => {
-//   index += 1;
-//   if(index >= 3){
-//     index = 0;
-//   }
-//   return () => index;
-// }, 10000);
-console.log(index, 'INDEXXX')
+render() {
+  const videoData = [
+    HHJacketPt1,
+    HHWaterPt2,
+    HHSpiritsPt3,
+];
   return(
     <View style={{display: 'flex', flex: 1, flexDirection: 'column'}}>
       {/* <Menu navigation={navigation} /> */}
@@ -69,8 +72,8 @@ console.log(index, 'INDEXXX')
       <Video
         // fullscreen={true}
         // resizeMode="cover"
-        source={videoData[index]}
-        seekTime={seconds}
+        source={videoData[this.state.index]}
+        seekTime={this.state.seconds}
         muted={true}
         style={{
           position: 'absolute',
@@ -84,19 +87,7 @@ console.log(index, 'INDEXXX')
     </View>
   )
 }
+}
 
 
-// Later on in your styles..
-const styles = StyleSheet.create({
-  backgroundVideo: {
-    display: 'flex',
-    flex: 1,
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-  },
-});
-
-export default VideoPage
+export default VideoTest
