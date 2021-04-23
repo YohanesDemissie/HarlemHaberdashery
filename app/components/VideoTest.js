@@ -23,6 +23,7 @@ forceUpdateHandler(){
 
   // const [index, setIndex] = useState(0);
   // const [seconds, setSeconds] = useState(0);
+  //TRY UPDATING STATE USING REACT NATIVE METHOD
 
 timer = setInterval(() => {
   this.setState({seconds: this.state.seconds += 1});
@@ -32,8 +33,6 @@ timer = setInterval(() => {
     console.log(this.state.seconds, 'this.state.seconds')
   }
   if(this.state.seconds >= 10){
-    // setIndex(this.state.index += 1);
-    // setSeconds(0);
     this.setState({index: this.state.index += 1})
     this.setState({seconds: 0});
     // this.state.index = this.state.index + 1;
@@ -55,16 +54,16 @@ render() {
     <View style={{display: 'flex', flex: 1, flexDirection: 'column'}}>
       {/* <Menu navigation={navigation} /> */}
       <TouchableOpacity style={{display: 'flex', flex: 1}} onPress={() => {
-        if(seconds < 10){
-          console.log(seconds, 'BELOW 10');
+        if(this.state.index === 0){
+          console.log(this.state.seconds, 'PURCHASING JACKET');
           Linking.openURL('https://www.harlemhaberdashery.com/')
         } else
-        if(seconds >= 10 && seconds < 20){
-          console.log(seconds, '10 - 20')
+        if(this.state.index === 1){
+          console.log(this.state.seconds, 'PURCHASING WATER')
           Linking.openURL('https://www.marvelouswaters.com/buy')
         } else
-        if(seconds >= 20 && seconds < 30){
-          console.log(seconds, '20 - 30')
+        if(this.state.index >= 2){
+          console.log(this.state.seconds, 'PURCHASING LIQUOR')
           Linking.openURL('https://hhbespokespirits.com/buy-now')
         }
       }}>
