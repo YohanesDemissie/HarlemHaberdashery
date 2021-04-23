@@ -10,6 +10,7 @@ import HHSpiritsPt3 from '../../assets/videos/HHSpiritsPt3.mp4';
 import HHJacketVideo from '../../assets/videos/HHJacketVideo.mp4';
 import HHWaterVideo from '../../assets/videos/HHWaterVideo.mp4';
 import HHSpiritsVideo from '../../assets/videos/HHSpiritsVideo.mp4';
+import HHHatVideo from '../../assets/videos/HHHatVideo.mp4';
 class VideoTest extends Component {
   constructor(props) {
     super(props);
@@ -31,7 +32,7 @@ forceUpdateHandler(){
 
 timer = setInterval(() => {
   this.setState({seconds: this.state.seconds += 1});
-  if(this.state.index === 4){
+  if(this.state.index === 5){
     this.setState({index: 0});
     this.setState({ seconds: 0});
     console.log(this.state.seconds, 'this.state.seconds')
@@ -50,6 +51,7 @@ timer = setInterval(() => {
 
 render() {
   const videoData = [
+    HHHatVideo,
     HHJacketVideo,
     HHLogoPatchVideo,
     HHWaterVideo,
