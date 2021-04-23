@@ -16,3 +16,13 @@ Videos:
 HHpt1: Video Mar 23, 3 58 11 PM.mp4
 HHpt2:
 HHPt3: Video Mar 23, 4 08 36 PM.mp4
+
+jacket potential videos
+Video Mar 23, 3 55 52 PM.mp4 (MAIN ONE)
+Video Mar 23, 3 52 56 PM.mp4
+
+liquor potential videos
+Video Mar 23, 4 14 15 PM.mp4
+
+Water potential videos
+Video Mar 23, 4 11 06 PM.mp4
