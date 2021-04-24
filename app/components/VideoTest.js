@@ -67,14 +67,18 @@ render() {
             Linking.openURL('https://www.harlemhaberdashery.com/')
           } else
           if(this.state.index === 1){
+            console.log(this.state.seconds, 'PURCHASING JACKET');
+            Linking.openURL('https://www.harlemhaberdashery.com/')
+          } else
+          if(this.state.index === 2){
+            console.log(this.state.seconds, 'PURCHASING PATCH')
+            Linking.openURL('https://hhbespoke.squarespace.com/all/hhblackpatch')
+          } else
+          if(this.state.index >= 3){
             console.log(this.state.seconds, 'PURCHASING WATER')
             Linking.openURL('https://www.marvelouswaters.com/buy')
-          } else
-          if(this.state.index >= 2){
-            console.log(this.state.seconds, 'PURCHASING LIQUOR')
-            Linking.openURL('https://hhbespokespirits.com/buy-now')
           }
-          if(this.state.index >= 3){
+          if(this.state.index >= 4){
             console.log(this.state.seconds, 'PURCHASING LIQUOR')
             Linking.openURL('https://hhbespokespirits.com/buy-now')
           }
