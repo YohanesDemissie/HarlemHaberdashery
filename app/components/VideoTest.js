@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Video from 'react-native-video';
-import { View, ImageBackground, Text, Button, TouchableOpacity, StyleSheet, Linking } from 'react-native';
-import HHLogo from '../../assets/harlemHaberdasheryLogo.png'
+import { View, ImageBackground, Image, Text, Button, TouchableOpacity, StyleSheet, Linking } from 'react-native';
+import HHLogoBlack from '../../assets/HHLogoBlack.png'
 import Menu from '../components/Menu';
 import HHJacketPt1 from '../../assets/videos/HHJacketPt1.mp4';
 import HHLogoPatchVideo from '../../assets/videos/HHLogoPatchVideo.mp4';
@@ -11,6 +11,7 @@ import HHJacketVideo from '../../assets/videos/HHJacketVideo.mp4';
 import HHWaterVideo from '../../assets/videos/HHWaterVideo.mp4';
 import HHSpiritsVideo from '../../assets/videos/HHSpiritsVideo.mp4';
 import HHHatVideo from '../../assets/videos/HHHatVideo.mp4';
+import { relative } from 'path';
 class VideoTest extends Component {
   constructor(props) {
     super(props);
@@ -57,10 +58,30 @@ render() {
     HHWaterVideo,
     HHSpiritsVideo
 ];
+
+const TextProduct = () => {
+  let product = '';
+  if(this.state.index === 0){
+    product = 'Hat'
+  }
+  if(this.state.index === 1){
+    product = 'Leather Coat'
+  }
+  if(this.state.index === 2){
+    product = 'Embroidery Patch'
+  }
+  if(this.state.index === 3){
+    product = 'Water'
+  }
+  if(this.state.index >= 4){
+    product = 'Spirits'
+  }
+  return <Text style={{color: 'white', textAlign: 'center',  marginTop: 300, fontSize: 20, borderStyle: 'solid', borderWidth: 2, borderColor: 'white', borderRadius: 15, padding: 10}}>Tap to Pruchase {product}</Text>
+}
   return(
-    <View style={{display: 'flex', flex: 1, flexDirection: 'column'}}>
+    <View style={{display: 'flex', flex: 1, flexDirection: 'column', backgroundColor: 'black', justifyContent: 'center'}}>
       {/* <Menu navigation={navigation} /> */}
-      <ImageBackground source={HHLogo} style={{flex: 1, height: '20%', justifyContent: 'center'}}>
+      <Image source={HHLogoBlack} style={{alignSelf: 'center', width: 200, height: 200, marginTop: 50}} />
         <TouchableOpacity style={{display: 'flex', flex: 1}} onPress={() => {
           if(this.state.index === 0){
             console.log(this.state.seconds, 'PURCHASING JACKET');
@@ -83,8 +104,7 @@ render() {
             Linking.openURL('https://hhbespokespirits.com/buy-now')
           }
         }}>
-
-    
+          {/* <Text style={{color: 'white', fontSize: 30, textAlign: 'center', marginTop: 100}}>Shop Now</Text> */}
         <Video
           // fullscreen={true}
           // resizeMode="cover"
@@ -92,6 +112,7 @@ render() {
           seekTime={this.state.seconds}
           muted={true}
           style={{
+            height: '60%',
             position: 'absolute',
             width: '100%',
             top: 0,
@@ -99,9 +120,9 @@ render() {
             bottom: 0,
             right: 0
           }}/>
+          <TextProduct />
 
         </TouchableOpacity>
-      </ImageBackground>
     </View>
   )
 }
