@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, ScrollView, Text, Image, StyleSheet, TouchableOpacity, Linking } from 'react-native';
+import Footer from './Footer';
 import PEpt1 from '../../assets/HHP&Ept1.png';
 import PEpt2 from '../../assets/HHP&Ept2.png';
 import PEpt3 from '../../assets/HHP&Ept3.png';
@@ -16,17 +17,18 @@ import Menu from '../components/Menu';
 
 const PressAndEvents = ({navigation}) =>{
   return(
-  <ScrollView>
+  <ScrollView style={{backgroundColor: 'black'}}>
       <Menu navigation={navigation} />
-      <Text style={{fontSize: 20, textAlign: 'center', fontWeight: '900'}}>Press & Events</Text>
       <View style={{
         display: 'flex',
         flex: 1,
   	    flexDirection: 'row',
-  	    flexWrap: 'wrap',
+        flexWrap: 'wrap',
+        backgroundColor: 'black',
   	    // // padding: 10,
         justifyContent: 'center',
       }}>
+      <Text style={{fontSize: 20, textAlign: 'center', fontWeight: '900', color: 'white', width: '100%'}}>Press & Events</Text>
       <TouchableOpacity onPress={() => { Linking.openURL('https://www.esquire.com/style/mens-fashion/a33939/harlem-haberdashery/')}} >
         <Image source={PEpt1}
           style={{
@@ -160,6 +162,7 @@ const PressAndEvents = ({navigation}) =>{
         }}/>
     </TouchableOpacity>
       </View>
+      <Footer />
     </ScrollView>
   );
 }

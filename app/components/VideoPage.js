@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Video from 'react-native-video';
 import { View, ImageBackground, Image, Text, Button, TouchableOpacity, StyleSheet, Linking } from 'react-native';
 import HHLogoBlack from '../../assets/HHLogoBlack.png'
-import Menu from '../components/Menu';
+import Menu from './Menu';
 import HHJacketPt1 from '../../assets/videos/HHJacketPt1.mp4';
 import HHLogoPatchVideo from '../../assets/videos/HHLogoPatchVideo.mp4';
 import HHWaterPt2 from '../../assets/videos/HHWaterPt2.mp4';
@@ -68,13 +68,13 @@ const TextProduct = () => {
     product = 'Leather Coat'
   }
   if(this.state.index === 2){
-    product = 'Embroidery Patch'
+    product = 'HH Patch'
   }
   if(this.state.index === 3){
-    product = 'Water'
+    product = 'Marvelous Water'
   }
   if(this.state.index >= 4){
-    product = 'Spirits'
+    product = 'HH Spirits'
   }
   return <Text style={{color: 'white', textAlign: 'center',  marginTop: 300, fontSize: 20, borderStyle: 'solid', borderWidth: 2, borderColor: 'white', borderRadius: 15, padding: 10}}>Tap to Pruchase {product}</Text>
 }
@@ -95,7 +95,7 @@ const TextProduct = () => {
             console.log(this.state.seconds, 'PURCHASING PATCH')
             Linking.openURL('https://hhbespoke.squarespace.com/all/hhblackpatch')
           } else
-          if(this.state.index >= 3){
+          if(this.state.index === 3){
             console.log(this.state.seconds, 'PURCHASING WATER')
             Linking.openURL('https://www.marvelouswaters.com/buy')
           }

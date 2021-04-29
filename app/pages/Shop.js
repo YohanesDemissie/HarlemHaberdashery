@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, View, Text, StyleSheet, Image, Linking, TouchableOpacity, ScrollView} from 'react-native';
 
-import { ROUTES } from '../config/constants';
 import Menu from '../components/Menu';
 import Footer from './Footer';
 
@@ -9,9 +8,8 @@ const Shop = ({navigation}) =>{
   return(
     <ScrollView>
       <Menu navigation={navigation}  />
-      <Button title="Home" onPress={() => navigation.navigate(ROUTES.HOME)}/>
       <View style={styles.shopStyles}>
-        <Text style={{fontSize: 40, marginTop: 20}}>Shop</Text>
+        <Text style={{fontSize: 40, marginTop: 20, color: 'white'}}>Shop</Text>
         <View style={styles.breakLine} />
 
         <View style={styles.gallery}>
@@ -65,6 +63,8 @@ const styles = StyleSheet.create({
   shopStyles: {
     textAlign: 'center',
     alignItems: 'center',
+    backgroundColor: 'black',
+    color: 'white'
   },
   gallery: {
     flex: 1,
@@ -79,23 +79,25 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 25,
     marginTop: 20,
-    textAlign: 'center'
+    textAlign: 'center',
+    color: 'white'
   },
   subLabel: {
     fontSize: 15,
     marginBottom: 40,
-    textAlign: 'center'
+    textAlign: 'center',
+    color: 'white'
   },
   breakLine: {
     marginTop: 30, marginBottom: 30,
     borderBottomWidth: 3,
-    borderBottomColor: 'black',
+    borderBottomColor: 'white',
     width: 300
   },
   subBreakLine: {
     marginBottom: 60,
     borderBottomWidth: 2,
-    borderBottomColor: 'black',
+    borderBottomColor: 'white',
     width: 200
   }
 })

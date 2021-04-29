@@ -8,9 +8,9 @@ import Footer from './Footer';
 
 const Story =({navigation})=> {
   return(
-    <ScrollView>
-      <Menu navigation={navigation} style={{textAlign: 'center'}}/>
     <View style={styles.viewStyle}>
+    <ScrollView>
+      <Menu navigation={navigation} style={{textAlign: 'center', color: 'white'}}/>
       <Text style={styles.header}>Our Story...</Text>
       <View style={styles.breakLine} />
       <Image style={styles.storyImage} source={hhStoryImage} onPress={Linking.openURL('google.com')}/>
@@ -32,27 +32,33 @@ const Story =({navigation})=> {
         {"\n"}
         <Footer />
         </Text>
-    </View>
     </ScrollView>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
   viewStyle: {
     flex: 1,
-    width: '80%',
+    // width: '80%',
     alignSelf: 'center',
     textAlign: 'center',
+    backgroundColor: 'black',
+    color: 'white'
   },
   header: {
     fontSize: 50,
-    textAlign: 'center'
+    textAlign: 'center',
+    color: 'white'
   },
   breakLine: {
-    marginTop: 30, marginBottom: 30,
+    marginTop: 30, 
+    marginBottom: 30,
+    width: '80%',
+    alignSelf: 'center',
     borderBottomWidth: 3,
-    borderBottomColor: 'black',
-    width: 400
+    borderBottomColor: 'white',
+    // width: 400
   },
   storyImage: {
     borderRadius: 30,
@@ -68,13 +74,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     borderWidth: 1,
-    backgroundColor: 'gray',
+    backgroundColor: 'red',
   },
   textStyle: {
     textAlign: 'center',
+    alignSelf: 'center',
     fontSize: 16,
-    color: '#000000',
-    width: '100%',
+    color: 'white',
+    width: '80%',
     height: '100%'
   },
 });
