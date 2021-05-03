@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import { View, Button, StyleSheet } from 'react-native';
 import { DrawerActions } from '@react-navigation/native';
 
 export default ({ navigation }) => {
   return(
-    <View style={{flexDirection: 'row', marginTop: '10%', backgroundColor: 'black'}}>
+    <View style={styles.wrapper}>
       <Button
          title="Menu"
         onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
@@ -12,3 +12,12 @@ export default ({ navigation }) => {
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  wrapper: {
+    flexDirection: 'row',
+    display: 'flex',
+    paddingTop: '10%',
+    backgroundColor: 'black'
+  }
+})

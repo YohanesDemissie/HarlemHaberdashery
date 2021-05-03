@@ -9,24 +9,24 @@ import { ROUTES } from '../config/constants';
 import NavigationService from './navigationService';
 
 const DrawerMenu = (props)=> (
-    <DrawerContentScrollView {...props}>
+    <DrawerContentScrollView {...props} >
       <DrawerItem
         label="Close Menu X"
         onPress={() => props.navigation.dispatch(DrawerActions.closeDrawer())}
       />
-      <DrawerItem
+      <DrawerItem 
       label="Home"
       onPress={() => NavigationService.navigate(ROUTES.HOME)}
       />
-      <DrawerItem
+      <DrawerItem 
         label="Story"
         onPress={() => NavigationService.navigate(ROUTES.STORY)}
       />
-      <DrawerItem
+      <DrawerItem 
         label="Shop"
         onPress={() => NavigationService.navigate(ROUTES.SHOP)}
       />
-      <DrawerItem
+      <DrawerItem 
         label="Press & Events"
         onPress={() => NavigationService.navigate(ROUTES.PRESSANDEVENTS)}
       />

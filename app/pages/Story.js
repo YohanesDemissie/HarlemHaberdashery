@@ -3,7 +3,6 @@ import { Text, Image, StyleSheet, ScrollView, View, Linking } from 'react-native
 
 import Menu from '../components/Menu';
 import hhStoryImage from '../../assets/hhStoryImage.png';
-import harlemHaberdasheryLogo from '../../assets/harlemHaberdasheryLogo.png';
 import Footer from './Footer';
 
 const Story =({navigation})=> {
@@ -40,7 +39,6 @@ const Story =({navigation})=> {
 const styles = StyleSheet.create({
   viewStyle: {
     flex: 1,
-    // width: '80%',
     alignSelf: 'center',
     textAlign: 'center',
     backgroundColor: 'black',
@@ -58,7 +56,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     borderBottomWidth: 3,
     borderBottomColor: 'white',
-    // width: 400
   },
   storyImage: {
     borderRadius: 30,

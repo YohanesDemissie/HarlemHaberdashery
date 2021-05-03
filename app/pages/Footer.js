@@ -8,15 +8,15 @@ import TwitterIcon from '../../assets/TwitterIconBlack.png';
 const Footer = () => {
   return(
     <View>
-      <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignSelf: 'center', width: '60%'}}>
+      <View style={styles.iconsWrapper}>
         <TouchableOpacity onPress={() => Linking.openURL('https://www.facebook.com/HarlemHaberdashery/')}>
-          <Image source={FacebookIcon} style={{ alignSelf: 'center', width: 40, height: 40}} />
+          <Image source={FacebookIcon} style={styles.icons} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/haberdasherynyc/')}> 
-          <Image source={InstagramIcon} style={{ alignSelf: 'center', width: 40, height: 40}}/>
+          <Image source={InstagramIcon} style={styles.icons}/>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => Linking.openURL('https://twitter.com/haberdasherynyc/')}>
-          <Image source={TwitterIcon} style={{ alignSelf: 'center', width: 40, height: 40}}/>
+          <Image source={TwitterIcon} style={styles.icons}/>
         </TouchableOpacity>
       </View>
       <Image source={harlemHaberdasheryLogo} style={styles.footerLogo} />
@@ -25,6 +25,18 @@ const Footer = () => {
 }
 
 const styles = StyleSheet.create ({
+  iconsWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignSelf: 'center',
+    width: '60%'
+  },
+  icons: {
+    alignSelf: 'center',
+    width: 40,
+    height: 40
+  },
   footerLogo: {
     display: 'flex',
     justifyContent: 'center',

@@ -9,7 +9,6 @@ const Home = ({ navigation }) => {
     <React.Fragment>
       <Menu navigation={navigation} />
       <VideoPage />
-      {/* <Gallery /> */}
     </React.Fragment>
   );
 }
