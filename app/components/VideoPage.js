@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import Video from 'react-native-video';
-import { View, ImageBackground, Image, Text, Button, TouchableOpacity, StyleSheet, Linking } from 'react-native';
+import { View, Image, Text, TouchableOpacity, Linking } from 'react-native';
 import HHLogoBlack from '../../assets/HHLogoBlack.png'
-import Menu from './Menu';
-import HHJacketPt1 from '../../assets/videos/HHJacketPt1.mp4';
 import HHLogoPatchVideo from '../../assets/videos/HHLogoPatchVideo.mp4';
-import HHWaterPt2 from '../../assets/videos/HHWaterPt2.mp4';
-import HHSpiritsPt3 from '../../assets/videos/HHSpiritsPt3.mp4';
 import HHJacketVideo from '../../assets/videos/HHJacketVideo.mp4';
 import HHWaterVideo from '../../assets/videos/HHWaterVideo.mp4';
 import HHSpiritsVideo from '../../assets/videos/HHSpiritsVideo.mp4';
@@ -25,11 +21,6 @@ class VideoTest extends Component {
 forceUpdateHandler(){
     this.forceUpdate();
   };
-
-
-  // const [index, setIndex] = useState(0);
-  // const [seconds, setSeconds] = useState(0);
-  //TRY UPDATING STATE USING REACT NATIVE METHOD
 
 timer = setInterval(() => {
   this.setState({seconds: this.state.seconds += 1});
@@ -81,7 +72,7 @@ const TextProduct = () => {
   return(
     <View style={{display: 'flex', flex: 1, flexDirection: 'column', backgroundColor: 'black', justifyContent: 'center'}}>
       {/* <Menu navigation={navigation} /> */}
-      <Image source={HHLogoBlack} style={{alignSelf: 'center', width: 200, height: 200, marginTop: 50}} />
+      <Image source={HHLogoBlack} style={{alignSelf: 'center', width: 200, height: 200}} />
         <TouchableOpacity style={{display: 'flex', flex: 1}} onPress={() => {
           if(this.state.index === 0){
             console.log(this.state.seconds, 'PURCHASING JACKET');

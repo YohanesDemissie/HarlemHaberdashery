@@ -43,13 +43,13 @@ const Shop = ({navigation}) =>{
             <Text style={styles.subLabel}>$400.00</Text>
           </TouchableOpacity>
 
-          <View style={styles.subBreakLine} />
+          {/* <View style={styles.subBreakLine} /> */}
 
-          <TouchableOpacity onPress={() => Linking.onPress('')}>
+          {/* <TouchableOpacity onPress={() => Linking.onPress('')}>
             <Image style={styles.image} source={{uri: 'https://i.pinimg.com/originals/e0/3d/5b/e03d5b812b2734826f76960eca5b5541.jpg'}} />
             <Text style={styles.label}>HH Bandana Set</Text>
             <Text style={styles.subLabel}>$400.00</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
 
         <View style={styles.breakLine} />
@@ -99,7 +99,8 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   breakLine: {
-    marginTop: 30, marginBottom: 30,
+    marginTop: 30, 
+    marginBottom: 30,
     borderBottomWidth: 3,
     borderBottomColor: 'white',
     width: 300
