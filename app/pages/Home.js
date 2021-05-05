@@ -1,16 +1,14 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import VideoPage from '../components/VideoPage'
 
-import assets from '../../assets/';
 import Menu from '../components/Menu';
-import { navigationRef } from '../navigation/navigationService';
 import Gallery from './Gallery';
 
-const Home = ({ navigation }) =>{
+const Home = ({ navigation }) => {
   return(
     <React.Fragment>
       <Menu navigation={navigation} />
-      <Gallery />
+      <VideoPage />
     </React.Fragment>
   );
 }

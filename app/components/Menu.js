@@ -1,48 +1,49 @@
 import React from 'react';
-//adding/testing routes
-import { ROUTES } from '../config/constants'
-import NavigationService from '../navigation/navigationService';
-// end testing
-import { View, Button } from 'react-native';
+import { View, Button, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { DrawerActions } from '@react-navigation/native';
-
-
-//KEY COMPONENT TO NAVIGATION BUTTONS
-const HomeMenuNavigationButton = () => {
-  return(
-    <View style={{flexDirection: 'row', marginTop: '10%'}}>
-    <Button title="HomeMenuNavigationButton"
-      onPress={() => NavigationService.navigate(ROUTES.HOME)} />
-    </View>
-      )
-}
-
-const StoryMenuNavigationButton = () => {
-  return(
-    <View style={{flexDirection: 'row', marginTop: '10%'}}>
-    <Button title="StoryMenuNavigationButton"
-      onPress={() => NavigationService.navigate(ROUTES.STORY)} />
-    </View>
-      )
-}
-
-const ShopMenuNavigationButton = () => {
-  return(
-    <View style={{flexDirection: 'row', marginTop: '10%'}}>
-    <Button title="ShopMenuNavigationButton"
-      onPress={() => NavigationService.navigate(ROUTES.SHOP)} />
-    </View>
-      )
-}
 
 export default ({ navigation }) => {
   return(
-        <View style={{flexDirection: 'row', marginTop: '10%'}}>
-      {/* <Button
-        title="Menu"
-        onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
-      /> */}
-      <HomeMenuNavigationButton />
+    <View style={styles.wrapper}>
+      <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
+        <Text style={styles.menu}>Menu</Text>
+        <View style={styles.menuLines} />
+        <View style={styles.menuLines} />
+        <View style={styles.menuLines} />
+        <View style={styles.menuLinePlaceHolder} />
+      </TouchableOpacity>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  wrapper: {
+    flexDirection: 'column',
+    display: 'flex',
+    flexWrap: 'wrap',
+    paddingTop: '10%',
+    backgroundColor: 'black',
+  },
+  menu: {
+  color: 'white',
+  marginLeft: 8,
+  fontSize: 18
+  },
+  menuLines: {
+    borderTopColor: 'white',
+    marginLeft: 8,
+    marginBottom: 5,
+    borderWidth: 1,
+    width: 47,
+    height: 0,
+    top: 0
+  },
+  menuLinePlaceHolder: {
+    borderTopColor: 'black',
+    marginLeft: 8,
+    borderWidth: 1,
+    width: 47,
+    height: 0,
+    top: 0
+  }
+});

@@ -1,67 +1,34 @@
 import React from 'react';
+import {Text} from 'react-native'
 import { DrawerActions } from '@react-navigation/native';
 import {
   DrawerContentScrollView,
   DrawerItem,
 } from '@react-navigation/drawer';
 
-import { ROUTES } from '../config/constants'
-import NavigationService from './navigationService'
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-
-
-//exporting to use in APP js and then into Video.js
-//export this to rootNavigation
-//HOME
-export const HomeButtonMenu = (props) => (
-  <DrawerContentScrollView {...props}>
-    <DrawerItem
-      label="Home"
-      onPress={() => NavigationService.navigate(ROUTES.HOME)}
-    />
-  </DrawerContentScrollView>
-)
-
-//STORY
-export const StoryButtonMenu = (props) => (
-  <DrawerContentScrollView {...props}>
-    <DrawerItem
-      label="Story"
-      onPress={() => NavigationService.navigate(ROUTES.STORY)}
-    />
-  </DrawerContentScrollView>
-)
-
-//SHOP
-export const ShopButtonMenu = (props) => (
-  <DrawerContentScrollView {...props}>
-    <DrawerItem
-      label="Shop"
-      onPress={() => NavigationService.navigate(ROUTES.SHOP)}
-    />
-  </DrawerContentScrollView>
-)
+import { ROUTES } from '../config/constants';
+import NavigationService from './navigationService';
 
 const DrawerMenu = (props)=> (
-    <DrawerContentScrollView {...props}>
-      <DrawerItem
-        label="Close Menu X"
+    <DrawerContentScrollView style={{backgroundColor: '#222222'}} {...props} >
+      <DrawerItem 
+        label={() => <Text style={{color: 'white'}}>Close Menu X</Text>}
         onPress={() => props.navigation.dispatch(DrawerActions.closeDrawer())}
       />
-      <DrawerItem
-      label="Home"
+      <DrawerItem 
+      label={() => <Text style={{color: 'white'}}>Home</Text>}
       onPress={() => NavigationService.navigate(ROUTES.HOME)}
       />
-      <DrawerItem
-        label="Story"
+      <DrawerItem 
+        label={() => <Text style={{color: 'white'}}>Story</Text>}
         onPress={() => NavigationService.navigate(ROUTES.STORY)}
       />
-      <DrawerItem
-        label="Shop"
+      <DrawerItem 
+        label={() => <Text style={{color: 'white'}}>Shop</Text>}
         onPress={() => NavigationService.navigate(ROUTES.SHOP)}
       />
-      <DrawerItem
-        label="Press & Events"
+      <DrawerItem 
+        label={() => <Text style={{color: 'white'}}>Press & Events</Text>}
         onPress={() => NavigationService.navigate(ROUTES.PRESSANDEVENTS)}
       />
     </DrawerContentScrollView>
