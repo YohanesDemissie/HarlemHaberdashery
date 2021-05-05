@@ -9,7 +9,7 @@ const Story =({navigation})=> {
   return(
     <View style={styles.viewStyle}>
     <ScrollView>
-      <Menu navigation={navigation} style={{textAlign: 'center', color: 'white'}}/>
+      <Menu navigation={navigation} />
       <Text style={styles.header}>Our Story...</Text>
       <View style={styles.breakLine} />
       <Image style={styles.storyImage} source={hhStoryImage} onPress={Linking.openURL('google.com')}/>
