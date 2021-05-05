@@ -26,3 +26,9 @@ Video Mar 23, 4 14 15 PM.mp4
 
 Water potential videos
 Video Mar 23, 4 11 06 PM.mp4
+
+### USE EXPO-AV FOR VIDEOS INSTEAD
+
+https://docs.expo.io/versions/latest/sdk/video/
+
+https://stackoverflow.com/questions/61613898/error-react-native-video-undefined-is-not-an-object-evaluating-rctvideoinsta
