@@ -26,6 +26,7 @@ const Footer = () => {
 
 const styles = StyleSheet.create ({
   iconsWrapper: {
+    marginTop: 50,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -42,9 +43,10 @@ const styles = StyleSheet.create ({
     justifyContent: 'center',
     alignSelf: 'center',
     resizeMode: 'cover',
-    marginBottom: 100,
-    width: 350,
-    height: 350
+    marginTop: 50,
+    marginBottom: 50,
+    width: 175,
+    height: 175
   }
 })
 

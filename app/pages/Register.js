@@ -53,7 +53,7 @@ const Register = ({navigation}) => {
         maxLength={5}
         keyboardType="numeric"
       />
-      <Button title="Register" onPress={() => console.log(text, email, zipCode, 'USER INFO')} />
+      <Button title="Register" onPress={() => console.log('USER DATA: ', text, email, zipCode)} />
       <Footer />
     </SafeAreaView>
   );
