@@ -31,6 +31,10 @@ const DrawerMenu = (props)=> (
         label={() => <Text style={{color: 'white'}}>Press & Events</Text>}
         onPress={() => NavigationService.navigate(ROUTES.PRESSANDEVENTS)}
       />
+      <DrawerItem
+        label={() => <Text style={{color: 'white'}}>Register</Text>}
+        onPress={() => NavigationService.navigate(ROUTES.REGISTER)}
+      />
     </DrawerContentScrollView>
   );
 
