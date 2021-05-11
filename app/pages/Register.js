@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { SafeAreaView, StyleSheet, TextInput, Button, Text } from "react-native";
+import { View, StyleSheet, TextInput, Button, Text } from "react-native";
 import Menu from '../components/Menu';
 import Footer from './Footer';
 
@@ -11,7 +11,7 @@ const Register = ({navigation}) => {
 
 
   return (
-    <SafeAreaView style={{backgroundColor: 'black', height: '100%'}}>
+    <View style={{backgroundColor: 'black', height: '100%'}}>
       <Menu navigation={navigation}/>
       <Text style={{
         fontSize: 40,
@@ -19,9 +19,13 @@ const Register = ({navigation}) => {
         textAlign: 'center',
         fontWeight: '900',
         color: 'white',
-        width: '100%'
+        width: '100%',
+
         }}
       >Sign Up</Text>
+
+              <View style={styles.breakLine} />
+
 
       <TextInput
         style={styles.input}
@@ -55,7 +59,7 @@ const Register = ({navigation}) => {
       />
       <Button title="Register" onPress={() => console.log('USER DATA: ', text, email, zipCode)} />
       <Footer />
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -67,7 +71,15 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderColor: 'white',
     textAlign: 'center',
-    color: 'white'
-  }
+    color: 'white',
+  },
+  breakLine: {
+    marginTop: 30, 
+    marginBottom: 30,
+    borderBottomWidth: 3,
+    borderBottomColor: 'white',
+    width: 300,
+    alignSelf: 'center'
+  },
 })
 export default Register;
